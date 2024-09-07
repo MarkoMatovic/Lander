@@ -42,4 +42,31 @@ public class Customer : IAggregateRoot
     public virtual ICollection<Offer> Offers { get; set; } = new List<Offer>();
 
     public virtual Role Role { get; set; } = null!;
+
+
+    public Customer(Guid userGuid, string userName, string email, string passwordHash, string passwordSalt, bool isDeleted, Guid createdByGuid, DateTime createdDate, Guid modifiedByGuid, DateTime modifiedDate)
+    {
+        UserGuid = userGuid;
+        UserName = userName;
+        Email = email;
+        PasswordHash = passwordHash;
+        PasswordSalt = passwordSalt;
+        IsDeleted = isDeleted;
+        CreatedByGuid = createdByGuid;
+        CreatedDate = createdDate;
+        ModifiedByGuid = modifiedByGuid;
+        ModifiedDate = modifiedDate;
+
+    }
+
+    public void SetIsDeleted(bool isDeleted)
+    {
+        IsDeleted = isDeleted;
+    }
+
+    public void SetModified(Guid modifiedByGuid, DateTime? modifiedDate)
+    {
+        ModifiedByGuid = modifiedByGuid;
+        ModifiedDate = modifiedDate ?? DateTime.Now;
+    }
 }
