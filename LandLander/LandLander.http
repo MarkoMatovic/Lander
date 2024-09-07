@@ -1,0 +1,6 @@
+@LandLander_HostAddress = http://localhost:5039
+
+GET {{LandLander_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

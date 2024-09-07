@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35219.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LandLander.Api", "LandLander\LandLander.Api.csproj", "{BFA90776-C067-4763-9C2A-57A084BAD49D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9B1DA940-7F08-4049-8241-1AD6A918D025}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LandLander.Core", "Core\LandLander.Core.csproj", "{94FB92ED-9FC6-4F8F-A4EE-8DA21D2890E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFA90776-C067-4763-9C2A-57A084BAD49D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFA90776-C067-4763-9C2A-57A084BAD49D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFA90776-C067-4763-9C2A-57A084BAD49D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFA90776-C067-4763-9C2A-57A084BAD49D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94FB92ED-9FC6-4F8F-A4EE-8DA21D2890E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94FB92ED-9FC6-4F8F-A4EE-8DA21D2890E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94FB92ED-9FC6-4F8F-A4EE-8DA21D2890E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94FB92ED-9FC6-4F8F-A4EE-8DA21D2890E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B27B8766-2356-4B8B-9FEC-62633FDBA6D1}
+	EndGlobalSection
+EndGlobal
