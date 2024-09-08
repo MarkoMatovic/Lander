@@ -4,12 +4,16 @@ using LandLander.Core.Domain.Aggregates.RentalsAggregate;
 using LandLander.Core.Domain.Aggregates.RolesAggregate;
 using LandLander.Core.Infrastructure.Configuration.RentalConfiguration;
 using LandLander.Core.Infrastructure.Configuration.RoleConfiguration;
+using LandLander.Services.Helpers;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
+using System.Data;
 
 namespace LandLander.Core.Infrastructure.Entity;
 
-public class RentalbaseContext : DbContext
+public class RentalbaseContext : DbContext, IUnitOfWork
 {
+    private IDbContextTransaction? _transaction;
     public virtual DbSet<Customer> Customers { get; set; }
 
     public virtual DbSet<CustomerPermission> CustomerPermissions { get; set; }
@@ -44,5 +48,55 @@ public class RentalbaseContext : DbContext
         modelBuilder.ApplyConfiguration(new PermissionsConfiguration());
         modelBuilder.ApplyConfiguration(new RolePermissionsConfiguration());
         modelBuilder.ApplyConfiguration(new RolesConfiguration());
+    }
+
+    public async Task<int> SaveEntities(CancellationToken cancellationToken = default)
+    {
+        return await base.SaveChangesAsync(cancellationToken: cancellationToken);
+    }
+
+    public async Task<IDbContextTransaction?> BeginTransaction()
+    {
+        if (_transaction is not null) return null;
+        _transaction = await Database.BeginTransactionAsync(isolationLevel: IsolationLevel.ReadCommitted);
+        return _transaction;
+    }
+
+    public async Task CommitTransaction(IDbContextTransaction? transaction)
+    {
+        try
+        {
+            await SaveChangesAsync();
+            await transaction?.CommitAsync();
+        }
+        catch
+        {
+            RollBackTrasaction();
+            throw;
+        }
+        finally
+        {
+            if (_transaction is not null)
+            {
+                _transaction.Dispose();
+                _transaction = null;
+            }
+        }
+    }
+
+    public void RollBackTrasaction()
+    {
+        try
+        {
+            _transaction?.Rollback();
+        }
+        finally
+        {
+            if ( _transaction is not null)
+            {
+                _transaction.Dispose();
+                _transaction = null;
+            }
+        }
     }
 }

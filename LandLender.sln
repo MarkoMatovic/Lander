@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LandLander.Api", "LandLande
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9B1DA940-7F08-4049-8241-1AD6A918D025}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LandLander.Core", "Core\LandLander.Core.csproj", "{94FB92ED-9FC6-4F8F-A4EE-8DA21D2890E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LandLander.Core", "Core\LandLander.Core.csproj", "{94FB92ED-9FC6-4F8F-A4EE-8DA21D2890E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LandLander.Services", "LandLander.Services\LandLander.Services.csproj", "{92375FBB-3633-4633-83DD-3763EC82C4BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{94FB92ED-9FC6-4F8F-A4EE-8DA21D2890E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94FB92ED-9FC6-4F8F-A4EE-8DA21D2890E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94FB92ED-9FC6-4F8F-A4EE-8DA21D2890E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92375FBB-3633-4633-83DD-3763EC82C4BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92375FBB-3633-4633-83DD-3763EC82C4BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92375FBB-3633-4633-83DD-3763EC82C4BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92375FBB-3633-4633-83DD-3763EC82C4BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
