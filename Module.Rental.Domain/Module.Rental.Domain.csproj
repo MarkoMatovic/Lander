@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core\LandLander.Core.csproj" />
+    <ProjectReference Include="..\Module.Domain\Module.Domain.csproj" />
+    <ProjectReference Include="..\Module.Message.Domain\Module.Message.Domain.csproj" />
+    <ProjectReference Include="..\Module.Role.Domain\Module.Roles.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
